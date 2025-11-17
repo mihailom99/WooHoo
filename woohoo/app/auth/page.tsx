@@ -11,14 +11,14 @@ export default function AuthPage() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const supabase = createClient();
-  const {user, loading: authLoading} = useAuth()
-  const router = useRouter()
+  const { user, loading: authLoading } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
-  if (user && !authLoading){
-    router.push("/")
-  }
-  }, [user, authLoading, router])
+    if (user && !authLoading) {
+      router.push("/");
+    }
+  }, [user, authLoading, router]);
 
   async function handleAuth(e: React.FormEvent) {
     e.preventDefault();
@@ -51,14 +51,17 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#8A2BE2]">
+    <div
+      className="min-h-screen flex items-center justify-center
+  bg-gradient-to-br from-[#5A189A] via-[#8A2BE2] to-[#B666D9] "
+    >
       <div
         className="bg-white p-8 rounded-xl shadow-[0_0_30px_#B666D9]
  w-full max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_50px_#B666D9]
 "
       >
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-800">WooHoo</h1>
+          <h1 className="text-3xl font-bold text-[#8A2BE2] ">WooHoo</h1>
           <p className="text-gray-600">
             {isSignUp ? "Create your account!" : "Sign in to your account!"}
           </p>
