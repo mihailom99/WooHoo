@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="flex items-center space-x-3 text-white font-bold text-2xl hover:scale-105 transition-transform"
+            className="flex items-center space-x-3 text-purple-300 hover:text-white transition font-bold text-2xl hover:scale-105 transition-transform"
           >
             WooHoo
           </Link>
@@ -19,28 +19,28 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-10">
             <Link
               href="/matches"
-              className="text-white/90 hover:text-white transition"
+              className="text-purple-300 hover:text-white transition"
             >
               Discover
             </Link>
 
             <Link
               href="/matches/list"
-              className="text-white/90 hover:text-white transition"
+              className="text-purple-300 hover:text-white transition"
             >
               Matches
             </Link>
 
             <Link
               href="/chat"
-              className="text-white/90 hover:text-white transition"
+              className="text-purple-300 hover:text-white transition"
             >
               Messages
             </Link>
 
             <Link
               href="/profile"
-              className="text-white/90 hover:text-white transition"
+              className="text-purple-300 hover:text-white transition"
             >
               Profile
             </Link>

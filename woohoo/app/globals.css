@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
-
+@layer components {
+  .card-swipe {
+    @apply relative overflow-hidden rounded-2xl shadow-lg bg-white ;
+  }
+}

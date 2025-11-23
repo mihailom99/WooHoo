@@ -62,6 +62,7 @@ export default function AuthPage() {
       >
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-[#8A2BE2] ">WooHoo</h1>
+          <p className= "text-2xl">💜</p>
           <p className="text-gray-600">
             {isSignUp ? "Create your account!" : "Sign in to your account!"}
           </p>

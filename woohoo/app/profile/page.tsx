@@ -54,10 +54,10 @@ export default function ProfilePage() {
 
   function calculateAge(birthdate: string) {
     const today = new Date();
-    const birth = new Date(birthdate);
-    let age = today.getFullYear() - birth.getFullYear();
-    const diff = today.getMonth() - birth.getMonth();
-    if (diff < 0 || (diff === 0 && today.getDate() < birth.getDate())) age--;
+    const birthDate = new Date(birthdate);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {age--;}
     return age;
   }
 
