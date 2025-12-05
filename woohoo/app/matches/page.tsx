@@ -5,6 +5,9 @@ import { UserProfile } from "../profile/page";
 import MatchCard from "@/components/MatchCard";
 import MatchButtons from "@/components/MatchButtons";
 import MatchNotification from "@/components/MatchNotification";
+import {useRouter} from "next/navigation";
+
+
 
 export default function MatchesPage() {
   const [potentialMatches, setPotentialMatches] = useState<UserProfile[]>([]);
@@ -14,7 +17,7 @@ export default function MatchesPage() {
   const [showMatchNotification, setShowMatchNotification] = useState(false);
   const [matchedUser, setMatchedUser] = useState<UserProfile | null>(null);
 
-  
+  const router = useRouter();
 
   useEffect(() => {
     async function loadUsers() {
@@ -58,13 +61,21 @@ export default function MatchesPage() {
     }
   }
 
-  function handleCloseMatchNotification() {}
+  function handleCloseMatchNotification() {
+    setShowMatchNotification(false);
+    setMatchedUser(null);
+  }
 
-  function handleStartChat() {}
+  function handleStartChat() {
+    if (!matchedUser) return;
+
+    router.push(`/chat/${matchedUser.id}`)
+    setShowMatchNotification(false);
+  }
 
   if (loading) {
     return (
-      <div className="h-full bg-gradient-to-br from-[#5A189A] via-[#8A2BE2] to-[#B666D9] dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-[#5A189A] via-[#8A2BE2] to-[#B666D9] flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400">
@@ -77,7 +88,7 @@ export default function MatchesPage() {
 
   if (currentIndex >= potentialMatches.length) {
     return (
-      <div className="h-full bg-gradient-to-br from-[#5A189A] via-[#8A2BE2] to-[#B666D9] dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+      <div className="h-full bg-gradient-to-br from-[#5A189A] via-[#8A2BE2] to-[#B666D9] flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-8">
           <div className="w-24 h-24 bg-gradient-to-l from-[#5A189A] via-[#8A2BE2] to-[#B666D9] rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-4xl">💜</span>

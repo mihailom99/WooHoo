@@ -56,7 +56,7 @@ export default function AuthPage() {
   bg-gradient-to-br from-[#5A189A] via-[#8A2BE2] to-[#B666D9] "
     >
       <div
-        className="bg-white p-8 rounded-xl shadow-[0_0_30px_#B666D9]
+        className="bg-purple-200 p-8 rounded-xl shadow-[0_0_30px_#B666D9]
  w-full max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_50px_#B666D9]
 "
       >
@@ -106,11 +106,7 @@ export default function AuthPage() {
             <div className="text-red-600 text-sm font-medium">{error}</div>
           )}
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-[#8A2BE2] text-white py-3 rounded-lg hover:bg-[#B666D9] transition disabled:bg-gray-400 hover:cursor-pointer"
-          >
+          <button type="submit" disabled={loading} className="w-full bg-[#8A2BE2] text-white py-3 rounded-lg hover:bg-[#B666D9] transition disabled:bg-gray-400 hover:cursor-pointer">
             {loading ? "loading..." : isSignUp ? "Sign up" : "Sign in"}
           </button>
         </form>
@@ -118,11 +114,8 @@ export default function AuthPage() {
         <div className="text-center mt-4">
           <button
             onClick={() => setIsSignUp(!isSignUp)}
-            className="text-[#8A2BE2] hover:underline hover:cursor-pointer hover:text-[#B666D9]"
-          >
-            {isSignUp
-              ? "Already have an account? Sign in!"
-              : "Don't have an account? Sign up!"}
+            className="text-[#8A2BE2] hover:underline hover:cursor-pointer hover:text-[#B666D9]" >
+            {isSignUp ? "Already have an account? Sign in!" : "Don't have an account? Sign up!"}
           </button>
         </div>
       </div>

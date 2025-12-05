@@ -16,7 +16,7 @@ export default function Navbar() {
             WooHoo
           </Link>
 
-          <div className="hidden md:flex items-center space-x-10">
+         { user && ( <div className="hidden md:flex items-center space-x-10">
             <Link
               href="/matches"
               className="text-purple-300 hover:text-white transition"
@@ -45,6 +45,7 @@ export default function Navbar() {
               Profile
             </Link>
           </div>
+          )}
 
           {user ? (
             <button
